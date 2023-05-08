@@ -95,8 +95,14 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dns' => env('DB_URI', 'mongodb://localhost:27017'),
-            'database' => 'laravel_mongodb'
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE','laravel_mongodb'),
+            'username' => env('DB_USERNAME','root'),
+            'password' => env('DB_PASSSWORD', ''),
+            'options' => [
+                'database' => env('DB_AUTHENTICATION_DATABASE', 'admin'),
+            ],
         ],
 
     ],
